@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/reset.scss";
 @import "./styles/variables.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   --background-color: #{map-get($light-theme, background)};
@@ -43,4 +43,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
+
+  font-family: "Inter", serif;
+   font-optical-sizing: auto;
 }
