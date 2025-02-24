@@ -18,5 +18,12 @@
           <input type="text" class="input" placeholder="Buscar filosofias...">
         </div>
       </section>
+
+      <section class="main__filter">
+        <button  (click)="toggleFilter('all')"  [ngClass]="{'main__filter__active': filterActive.all}" >Todos</button>
+        <button  (click)="toggleFilter('ethics')"  [ngClass]="{'main__filter__active': filterActive.ethics}">Ética</button>
+        <button  (click)="toggleFilter('metaPhysics')"  [ngClass]="{'main__filter__active': filterActive.metaPhysics}">MetaFísica</button>
+        <button  (click)="toggleFilter('epistemology')"  [ngClass]="{'main__filter__active': filterActive.epistemology}">Epistemologia</button>
+      </section>
     </main>
 </body>

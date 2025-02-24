@@ -19,6 +19,8 @@
   --input-bg: #{map-get($light-theme, input-bg)};
   --input-text: #{map-get($light-theme, input-text)};
   --input-placeholder: #{map-get($light-theme, input-placeholder)};
+  --button-active: #{map-get($light-theme, button-active)};
+  --button-active-text: #{map-get($light-theme,button-active-text)};
 }
 
 .dark-theme {
@@ -37,6 +39,8 @@
   --input-bg: #{map-get($dark-theme, input-bg)};
   --input-text: #{map-get($dark-theme, input-text)};
   --input-placeholder: #{map-get($dark-theme, input-placeholder)};
+  --button-active: #{map-get($dark-theme, button-active)};
+  --button-active-text: #{map-get($dark-theme, button-active-text)};
 }
 
 body {
