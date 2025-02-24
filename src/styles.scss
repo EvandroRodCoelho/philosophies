@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+
+:root {
+  --background-color: #{map-get($light-theme, background)};
+  --text-color: #{map-get($light-theme, text)};
+  --muted-text: #{map-get($light-theme, muted-text)};
+  --gradient-start: #{map-get($light-theme, gradient-start)};
+  --gradient-middle: #{map-get($light-theme, gradient-middle)};
+  --gradient-end: #{map-get($light-theme, gradient-end)};
+  --card-gradient-start: #{map-get($light-theme, card-gradient-start)};
+  --card-gradient-end: #{map-get($light-theme, card-gradient-end)};
+  --button: #{map-get($light-theme, button)};
+  --button-hover: #{map-get($light-theme, button-hover)};
+  --badge-active: #{map-get($light-theme, badge-active)};
+  --badge-inactive: #{map-get($light-theme, badge-inactive)};
+  --input-bg: #{map-get($light-theme, input-bg)};
+  --input-text: #{map-get($light-theme, input-text)};
+  --input-placeholder: #{map-get($light-theme, input-placeholder)};
+}
+
+.dark-theme {
+  --background-color: #{map-get($dark-theme, background)};
+  --text-color: #{map-get($dark-theme, text)};
+  --muted-text: #{map-get($dark-theme, muted-text)};
+  --gradient-start: #{map-get($dark-theme, gradient-start)};
+  --gradient-middle: #{map-get($dark-theme, gradient-middle)};
+  --gradient-end: #{map-get($dark-theme, gradient-end)};
+  --card-gradient-start: #{map-get($dark-theme, card-gradient-start)};
+  --card-gradient-end: #{map-get($dark-theme, card-gradient-end)};
+  --button: #{map-get($dark-theme, button)};
+  --button-hover: #{map-get($dark-theme, button-hover)};
+  --badge-active: #{map-get($dark-theme, badge-active)};
+  --badge-inactive: #{map-get($dark-theme, badge-inactive)};
+  --input-bg: #{map-get($dark-theme, input-bg)};
+  --input-text: #{map-get($dark-theme, input-text)};
+  --input-placeholder: #{map-get($dark-theme, input-placeholder)};
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
