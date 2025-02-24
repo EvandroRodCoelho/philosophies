@@ -1,0 +1,50 @@
+body {
+ padding: 2.125rem 1.5rem;
+}
+
+header  {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  &__search {
+    margin: 40px 0px;
+    padding: 30px;
+     background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    border-radius: 15px;
+    &__input {
+      background-color: var( --input-bg);
+      display: flex;
+      border-radius: 15px;
+      gap: 12px;
+      padding: 5px;
+      margin: 14px 0;
+      input {
+        border-radius: 15px;
+        padding: 5px 12px;
+        width: 100%;
+        background-color: transparent;
+        border: 0;
+        color: var(--input-text);
+        outline: 0;
+        &:active {
+          border: 0;
+        }
+        &::placeholder {
+          color: var(--input-text);
+        }
+      }
+    }
+    h3 {
+      font-size: 34px;
+    }
+    p {
+      font-size: 16px;
+      margin: 18px 0;
+    }
+  }
+
+}

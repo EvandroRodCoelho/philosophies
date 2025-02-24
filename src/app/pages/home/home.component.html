@@ -1,0 +1,23 @@
+<body>
+    <header>
+        <h1>Philosophies</h1>
+
+        <app-button-theme></app-button-theme>
+    </header>
+
+    <main class="main">
+      <section class="main__search">
+        <h3>Explore o Mundo da Filosofia</h3>
+        <p>Descubra ideias que moldaram o pensamento humano ao longo dos séculos.</p>
+        <div class="main__search__input">
+          @if (!isDarkMode()) {
+          <img src="icon-search.png" alt="Dark Mode">
+          } @else {
+          <img src="icon-search-dark.png" alt="icon light mode">
+          }
+          <input type="text" class="input" placeholder="Buscar filosofias...">
+        </div>
+      </section>
+    </main>
+
+</body>
