@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ButtonThemeComponent } from '../../components/button-theme/button-theme.component';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from '../../components/card/card.component';
 type FilterState = {
   all: boolean;
   ethics: boolean;
@@ -11,7 +12,7 @@ type FilterState = {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonThemeComponent, CommonModule],
+  imports: [ButtonThemeComponent, CommonModule, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
