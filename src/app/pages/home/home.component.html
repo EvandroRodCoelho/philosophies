@@ -15,7 +15,7 @@
           } @else {
           <img src="icon-search-dark.png" alt="icon light mode">
           }
-          <input type="text" class="input" placeholder="Buscar filosofias...">
+          <input type="text" class="input" placeholder="Buscar filosofias..."  (input)="updateSearchTerm($event)">
         </div>
       </section>
 

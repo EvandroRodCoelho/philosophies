@@ -21,6 +21,8 @@ type FilterState = {
 })
 export class HomeComponent {
   philosophiesFilter = [...philosophiesData];
+  searchTerm: string = ''; // Adiciona o estado da busca
+
   filterActive: FilterState = {
     all: true,
     ethics: false,
@@ -31,10 +33,35 @@ export class HomeComponent {
   constructor(private themeService: ThemeService) {}
 
   toggleFilter(filterKey: keyof FilterState): void {
-    const updatedFilters = this.resetFilters(filterKey);
-    this.filterActive = updatedFilters;
+    this.filterActive = this.resetFilters(filterKey);
+    this.applyFilters();
+  }
 
-    this.philosophiesFilter = this.applyFilter(filterKey);
+  updateSearchTerm(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.searchTerm = target.value.toLowerCase();
+    this.applyFilters();
+  }
+
+  private applyFilters(): void {
+    let filteredData = [...philosophiesData];
+
+    const activeFilter = Object.keys(this.filterActive).find(
+      (key) => this.filterActive[key as keyof FilterState]
+    );
+
+    if (activeFilter && activeFilter !== 'all') {
+      filteredData = filteredData.filter((item) => item.type === activeFilter);
+    }
+
+    // Filtro por nome
+    if (this.searchTerm) {
+      filteredData = filteredData.filter((item) =>
+        item.name.toLowerCase().includes(this.searchTerm)
+      );
+    }
+
+    this.philosophiesFilter = filteredData;
   }
 
   private resetFilters(filterKey: keyof FilterState): FilterState {
@@ -42,11 +69,6 @@ export class HomeComponent {
       (acc, key) => ({ ...acc, [key]: key === filterKey }),
       {} as FilterState
     );
-  }
-
-  private applyFilter(filterKey: keyof FilterState) {
-    if (filterKey === 'all') return [...philosophiesData];
-    return philosophiesData.filter((item) => item.type === filterKey);
   }
 
   isDarkMode(): boolean {
