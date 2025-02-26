@@ -1,28 +1,27 @@
 <div class="container">
   <header>
-    <h2>Estoicismo</h2>
+    <h2>{{ cardInfo.name }}</h2>
     <div class="type">
-      <span>Etica</span>
+      <span>{{ getTranslatedType()  }}</span>
     </div>
   </header>
 
-
   <div class="container__info">
     <p class="container__info__description">
-      Uma filosofia grega antiga que ensina o desenvolvimento do autocontrole e da fortaleza como meio de
-      superar emoções destrutivas.
+      {{ cardInfo.description }}
     </p>
+
     <div class="container__info__artists">
       <h3>Principais Figuras:</h3>
       <ul>
-        <li>Zenão de Cítio</li>
-        <li>Zenão de Cítio</li>
-        <li>Zenão de Cítio</li>
+          @for (philosopher of cardInfo.key_figures ; track philosopher) {
+            <li>{{ philosopher }}</li>
+          }
       </ul>
     </div>
+
     <blockquote>
-      <p>A felicidade do homem consiste em viver de acordo com a natureza.</p>
+      <p>{{ cardInfo.quote }}</p>
     </blockquote>
   </div>
-
 </div>

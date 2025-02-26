@@ -27,11 +27,9 @@
       </section>
 
       <section class="main__cards">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+          @for (philosopher of philosophiesFilter; track philosopher) {
+            <app-card [cardInfo]="philosopher"></app-card>
+          }
       </section>
     </main>
 </body>

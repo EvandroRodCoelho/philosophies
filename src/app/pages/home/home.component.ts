@@ -3,12 +3,15 @@ import { ButtonThemeComponent } from '../../components/button-theme/button-theme
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../components/card/card.component';
+import { philosophiesData } from '../../mock/philosophiesData';
+
 type FilterState = {
   all: boolean;
   ethics: boolean;
   metaPhysics: boolean;
   epistemology: boolean;
 };
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -17,24 +20,35 @@ type FilterState = {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private themeService: ThemeService) {}
+  philosophiesFilter = [...philosophiesData];
   filterActive: FilterState = {
     all: true,
     ethics: false,
     metaPhysics: false,
     epistemology: false,
   };
-  toggleFilter(filtro: keyof FilterState) {
-    Object.keys(this.filterActive).forEach((key) => {
-      this.filterActive[key as keyof FilterState] = false;
-    });
 
-    if (filtro === 'all') {
-      this.filterActive.all = true;
-    } else {
-      this.filterActive[filtro] = true;
-    }
+  constructor(private themeService: ThemeService) {}
+
+  toggleFilter(filterKey: keyof FilterState): void {
+    const updatedFilters = this.resetFilters(filterKey);
+    this.filterActive = updatedFilters;
+
+    this.philosophiesFilter = this.applyFilter(filterKey);
   }
+
+  private resetFilters(filterKey: keyof FilterState): FilterState {
+    return Object.keys(this.filterActive).reduce(
+      (acc, key) => ({ ...acc, [key]: key === filterKey }),
+      {} as FilterState
+    );
+  }
+
+  private applyFilter(filterKey: keyof FilterState) {
+    if (filterKey === 'all') return [...philosophiesData];
+    return philosophiesData.filter((item) => item.type === filterKey);
+  }
+
   isDarkMode(): boolean {
     return this.themeService.isDarkMode();
   }
