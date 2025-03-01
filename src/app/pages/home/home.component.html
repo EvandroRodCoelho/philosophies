@@ -7,15 +7,24 @@
     </p>
     <div class="main__search__input">
       @if (!isDarkMode()) {
-      <img src="icon-search.png" alt="Dark Mode" />
+      <img
+        src="icon-search.png"
+        alt="Ícone de busca no modo escuro"
+        aria-hidden="true"
+      />
       } @else {
-      <img src="icon-search-dark.png" alt="icon light mode" />
+      <img
+        src="icon-search-dark.png"
+        alt="Ícone de busca no modo claro"
+        aria-hidden="true"
+      />
       }
       <input
         type="text"
         class="input"
         placeholder="Buscar filosofias..."
         (input)="updateSearchTerm($event)"
+        aria-label="Buscar filosofias"
       />
     </div>
   </section>
