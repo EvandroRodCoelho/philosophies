@@ -3,9 +3,11 @@
 
 
 .main {
-   padding: 2.125rem 1.5rem;
+   padding: 2.125rem  1.5rem;
+   padding-top: 0;
   &__search {
     margin: 40px 0px;
+    margin-top: 20px;
     padding: 30px;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
     border-radius: $border-radius;
@@ -68,12 +70,14 @@
     }
   }
   &__cards {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
 
-    @media screen and (min-width: 0px) and  (max-width:1056px) {
-      gap: 18px;
-    }
+  @media screen and (max-width: 1056px) {
+    gap:12px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
 }
