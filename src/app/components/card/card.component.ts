@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Philosophy } from '../../interface/philosophies';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-card',
@@ -11,14 +12,9 @@ import { Philosophy } from '../../interface/philosophies';
 export class CardComponent {
   @Input() cardInfo: Philosophy = {} as Philosophy;
 
-  typeTranslatePT: Record<string, string> = {
-      ethics: 'Ética',
-      metaPhysics: 'Metafísica',
-      epistemology: 'Epistemologia',
-    };
-
+  constructor(private translatedService: TranslateService) {}
 
   getTranslatedType(): string {
-    return this.typeTranslatePT[this.cardInfo.type] || 'Desconhecido';
+    return this.translatedService.getTranslatedType(this.cardInfo.type);
   }
 }

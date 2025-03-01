@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Philosophy } from '../../interface/philosophies';
 import { philosophiesData } from '../../mock/philosophiesData';
 import { HeaderComponent } from '../../components/header/header.component';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-philosophy-detail',
@@ -19,7 +20,10 @@ export class PhilosophyComponent implements OnInit {
     epistemology: 'Epistemologia',
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private translateService: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -31,13 +35,8 @@ export class PhilosophyComponent implements OnInit {
       }
     });
   }
-  /**
-   * Retrieves the translated type of the current philosophy.
-   *
-   * @returns {string} The translated type in Portuguese, or 'Desconhecido' if the type is not found.
-   */
 
   getTranslatedType(): string {
-    return this.typeTranslatePT[this.philosophy?.type ?? ''] || 'Desconhecido';
+    return this.translateService.getTranslatedType(this.philosophy?.type ?? '');
   }
 }
