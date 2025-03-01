@@ -1,0 +1,62 @@
+<body>
+  <app-header></app-header>
+  @if(philosophy) {
+  <main class="philosophy-page">
+    <div class="philosophy-header">
+      <h1>{{ philosophy.name }}</h1>
+      <span class="philosophy-type">{{ getTranslatedType() }}</span>
+    </div>
+
+    <div class="philosophy-content">
+      <section class="philosophy-intro">
+        <blockquote class="philosophy-quote">
+          {{ philosophy.quote }}
+        </blockquote>
+        <p class="philosophy-description">
+          {{ philosophy.description }}
+        </p>
+      </section>
+
+      <section class="philosophy-details">
+        <div class="philosophy-figures">
+          <h2>Principais Figuras</h2>
+          <ul>
+            @for (figures of philosophy.key_figures; track $index) {
+            <li>{{ figures }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="philosophy-principles">
+          <h2>Princípios Fundamentais</h2>
+          <ul>
+            @for (principle of philosophy.principles; track $index) {
+            <li>{{ principle }}</li>
+            }
+          </ul>
+        </div>
+      </section>
+
+      <section class="philosophy-impact">
+        <h2>Impacto e Influência</h2>
+        <p>
+          {{ philosophy.impact }}
+        </p>
+      </section>
+
+      <section class="philosophy-works">
+        <h2>Obras Principais</h2>
+        <ul>
+          @for (major of philosophy.major_works; track $index) {
+          <li>{{ major }}</li>
+          }
+        </ul>
+      </section>
+    </div>
+  </main>
+  } @else {
+  <div #notFound>
+    <p>Filosofia não encontrada.</p>
+  </div>
+  }
+</body>

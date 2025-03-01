@@ -1,0 +1,107 @@
+@import "../../../styles/variables.scss";
+.main {
+   padding: 2.125rem 1.5rem;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.philosophy-page {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 2rem;
+  background-color: var(--bg-unique-card);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: $border-radius;
+}
+
+.philosophy-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.philosophy-header h1 {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.philosophy-type {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background-color: #3498db;
+  color: var(--text-color);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.philosophy-quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #7f8c8d;
+  border-left: 4px solid #3498db;
+  padding-left: 1rem;
+  margin: 2rem 0;
+}
+
+.philosophy-description {
+  font-size: 1.1rem;
+  color:  var(--text-color);;
+}
+
+.philosophy-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.philosophy-figures, .philosophy-principles {
+  flex-basis: 48%;
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color:  var(--text-color);;
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.philosophy-impact, .philosophy-works {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.philosophy-impact p, .philosophy-works ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .philosophy-details {
+    flex-direction: column;
+  }
+
+  .philosophy-figures, .philosophy-principles {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+  }
+}

@@ -16,7 +16,8 @@ $light-theme: (
   input-text: #000000,
   input-placeholder: #9ca3af,
   button-active: #111827,
-  button-active-text: #ffffff
+  button-active-text: #ffffff,
+  bg-unique-card: #e7e7e7
 );
 
 // Dark Mode Colors
@@ -37,7 +38,8 @@ $dark-theme: (
   input-text: #ffffff,
   input-placeholder: #9ca3af,
   button-active: #ffffff,
-  button-active-text: #000
+  button-active-text: #000,
+  bg-unique-card: #233253
 );
 
 
