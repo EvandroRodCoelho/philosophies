@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonThemeComponent } from '../../components/button-theme/button-theme.component';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../components/card/card.component';
 import { philosophiesData } from '../../mock/philosophiesData';
+import { HeaderComponent } from '../../components/header/header.component';
 
 type FilterState = {
   all: boolean;
@@ -15,7 +15,7 @@ type FilterState = {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonThemeComponent, CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
