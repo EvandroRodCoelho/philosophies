@@ -1,31 +1,55 @@
-<body>
-
 <app-header></app-header>
-    <main class="main">
-      <section class="main__search">
-        <h3>Explore o Mundo da Filosofia</h3>
-        <p>Descubra ideias que moldaram o pensamento humano ao longo dos séculos.</p>
-        <div class="main__search__input">
-          @if (!isDarkMode()) {
-          <img src="icon-search.png" alt="Dark Mode">
-          } @else {
-          <img src="icon-search-dark.png" alt="icon light mode">
-          }
-          <input type="text" class="input" placeholder="Buscar filosofias..."  (input)="updateSearchTerm($event)">
-        </div>
-      </section>
+<main class="main">
+  <section class="main__search">
+    <h3>Explore o Mundo da Filosofia</h3>
+    <p>
+      Descubra ideias que moldaram o pensamento humano ao longo dos séculos.
+    </p>
+    <div class="main__search__input">
+      @if (!isDarkMode()) {
+      <img src="icon-search.png" alt="Dark Mode" />
+      } @else {
+      <img src="icon-search-dark.png" alt="icon light mode" />
+      }
+      <input
+        type="text"
+        class="input"
+        placeholder="Buscar filosofias..."
+        (input)="updateSearchTerm($event)"
+      />
+    </div>
+  </section>
 
-      <section class="main__filter">
-        <button  (click)="toggleFilter('all')"  [ngClass]="{'main__filter__active': filterActive.all}" >Todos</button>
-        <button  (click)="toggleFilter('ethics')"  [ngClass]="{'main__filter__active': filterActive.ethics}">Ética</button>
-        <button  (click)="toggleFilter('metaPhysics')"  [ngClass]="{'main__filter__active': filterActive.metaPhysics}">MetaFísica</button>
-        <button  (click)="toggleFilter('epistemology')"  [ngClass]="{'main__filter__active': filterActive.epistemology}">Epistemologia</button>
-      </section>
+  <section class="main__filter">
+    <button
+      (click)="toggleFilter('all')"
+      [ngClass]="{ main__filter__active: filterActive.all }"
+    >
+      Todos
+    </button>
+    <button
+      (click)="toggleFilter('ethics')"
+      [ngClass]="{ main__filter__active: filterActive.ethics }"
+    >
+      Ética
+    </button>
+    <button
+      (click)="toggleFilter('metaPhysics')"
+      [ngClass]="{ main__filter__active: filterActive.metaPhysics }"
+    >
+      MetaFísica
+    </button>
+    <button
+      (click)="toggleFilter('epistemology')"
+      [ngClass]="{ main__filter__active: filterActive.epistemology }"
+    >
+      Epistemologia
+    </button>
+  </section>
 
-      <section class="main__cards">
-          @for (philosopher of philosophiesFilter; track philosopher) {
-            <app-card [cardInfo]="philosopher"></app-card>
-          }
-      </section>
-    </main>
-</body>
+  <section class="main__cards">
+    @for (philosopher of philosophiesFilter; track philosopher) {
+    <app-card [cardInfo]="philosopher"></app-card>
+    }
+  </section>
+</main>

@@ -1,15 +1,9 @@
 @import "../../../styles/variables.scss";
-body {
-  padding: 2.125rem 1.5rem;
-}
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .main {
+   padding: 2.125rem 1.5rem;
   &__search {
     margin: 40px 0px;
     padding: 30px;
