@@ -2,6 +2,22 @@
   <a routerLink="/" routerLinkActive="active" aria-current="page"
     >Philosophies</a
   >
+  <div>
+    <app-button-theme></app-button-theme>
 
-  <app-button-theme></app-button-theme>
+    @if(!isHome) {
+    <button
+      routerLink="/"
+      routerLinkActive="active"
+      aria-current="page"
+      class="btn-header"
+    >
+      @if(isDarkMode()) {
+      <img src="/icon-home-dark.png" alt="" />
+      } @else {
+      <img src="/icon-home-ligth.png" alt="" />
+      }
+    </button>
+    }
+  </div>
 </header>

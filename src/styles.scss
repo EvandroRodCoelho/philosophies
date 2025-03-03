@@ -51,5 +51,22 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 
   font-family: "Inter", serif;
-   font-optical-sizing: auto;
+  font-optical-sizing: auto;
+}
+
+
+.btn-header {
+  background-color: var(--button);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
 }

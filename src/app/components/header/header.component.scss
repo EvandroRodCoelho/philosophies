@@ -3,11 +3,17 @@ header {
   justify-content: space-between;
   align-items: center;
 
-   padding: 2.125rem 1.5rem;
+  padding: 2.125rem 1.5rem;
 
-   a {
+  div {
+    display: flex;
+    gap: 12px;
+  }
+
+
+  a {
     text-decoration: none;
     color: var(--text);
     font-size: 24px;
-   }
+  }
 }

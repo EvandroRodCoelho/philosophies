@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonThemeComponent } from '../button-theme/button-theme.component';
 import { ThemeService } from '../../services/theme.service';
 import { RouterModule } from '@angular/router';
@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  @Input() isHome = false;
   constructor(private themeService: ThemeService) {}
   isDarkMode(): boolean {
     return this.themeService.isDarkMode();
