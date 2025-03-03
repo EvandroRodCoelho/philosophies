@@ -31,24 +31,28 @@
 
   <section class="main__filter">
     <button
+      class="main__filter__button"
       (click)="toggleFilter('all')"
       [ngClass]="{ main__filter__active: filterActive.all }"
     >
       Todos
     </button>
     <button
+      class="main__filter__button"
       (click)="toggleFilter('ethics')"
       [ngClass]="{ main__filter__active: filterActive.ethics }"
     >
       Ética
     </button>
     <button
+      class="main__filter__button"
       (click)="toggleFilter('metaPhysics')"
       [ngClass]="{ main__filter__active: filterActive.metaPhysics }"
     >
       MetaFísica
     </button>
     <button
+      class="main__filter__button"
       (click)="toggleFilter('epistemology')"
       [ngClass]="{ main__filter__active: filterActive.epistemology }"
     >

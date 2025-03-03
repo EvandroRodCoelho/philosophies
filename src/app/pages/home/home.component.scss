@@ -1,10 +1,9 @@
 @import "../../../styles/variables.scss";
 
-
-
 .main {
-   padding: 2.125rem  1.5rem;
-   padding-top: 0;
+  padding: 2.125rem 1.5rem;
+  padding-top: 0;
+
   &__search {
     margin: 40px 0px;
     margin-top: 20px;
@@ -54,7 +53,7 @@
     align-items: center;
     gap: 12px;
 
-    button {
+    &__button {
       background-color: transparent;
       border: solid 1px var(--muted-text);
       font-size: 12px;
@@ -62,6 +61,11 @@
       padding: 5px 12px;
       border-radius: $border-radius;
       cursor: pointer;
+
+      &:hover {
+        color: var(--button-active-text);
+        background-color: var(--button-active);
+      }
     }
 
     button.main__filter__active {
@@ -69,15 +73,16 @@
       background-color: var(--button-active);
     }
   }
-  &__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  width: 100%;
 
-  @media screen and (max-width: 1056px) {
-    gap:12px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 24px;
+    width: 100%;
+
+    @media screen and (max-width: 1056px) {
+      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
   }
-}
 }

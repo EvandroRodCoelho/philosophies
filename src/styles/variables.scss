@@ -1,6 +1,6 @@
 // Light Mode Colors
-$light-theme: (
-  background: #ffffff,
+$light-theme: (background: #ffffff,
+  reverse-color: #111827,
   text: #000000,
   muted-text: #6b7280,
   gradient-start: #9333ea,
@@ -17,12 +17,11 @@ $light-theme: (
   input-placeholder: #9ca3af,
   button-active: #111827,
   button-active-text: #ffffff,
-  bg-unique-card: #e7e7e7
-);
+  bg-unique-card: #e7e7e7);
 
 // Dark Mode Colors
-$dark-theme: (
-  background: #111827,
+$dark-theme: (background: #111827,
+  reverse-color:#ffffff,
   text: #ffffff,
   muted-text: #d1d5db,
   gradient-start: #9333ea,
@@ -39,8 +38,7 @@ $dark-theme: (
   input-placeholder: #9ca3af,
   button-active: #ffffff,
   button-active-text: #000,
-  bg-unique-card: #233253
-);
+  bg-unique-card: #233253);
 
 
 $border-radius:15px;

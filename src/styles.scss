@@ -22,6 +22,7 @@
   --button-active: #{map-get($light-theme, button-active)};
   --button-active-text: #{map-get($light-theme,button-active-text)};
   --bg-unique-card: #{map-get($light-theme, bg-unique-card)};
+  --reverse-color: #{map-get($light-theme,  reverse-color)};
 }
 
 .dark-theme {
@@ -43,6 +44,7 @@
   --button-active: #{map-get($dark-theme, button-active)};
   --button-active-text: #{map-get($dark-theme, button-active-text)};
   --bg-unique-card: #{map-get($dark-theme, bg-unique-card)};
+  --reverse-color:#{map-get($dark-theme,  reverse-color)}
 }
 
 body {
@@ -54,6 +56,21 @@ body {
   font-optical-sizing: auto;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--reverse-color);
+
+  border-radius: 20px;
+
+  border: 1px solid #ccc;
+}
 
 .btn-header {
   background-color: var(--button);
