@@ -26,6 +26,12 @@
     background: linear-gradient(to right, var(--card-gradient-start), var(--card-gradient-end));
     border-top-left-radius: $border-radius;
     border-top-right-radius:  $border-radius;
+    a {
+      color: var(--text);
+      text-decoration: none;
+
+      font-size: 22px;
+    }
     .type {
       color: var(--text);
       background-color: var(--input-bg);

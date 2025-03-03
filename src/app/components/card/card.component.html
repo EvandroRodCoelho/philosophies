@@ -1,8 +1,13 @@
 <div class="container">
   <header>
-    <h2>{{ cardInfo.name }}</h2>
+    <a
+      [routerLink]="['/philosophy', cardInfo.name]"
+      routerLinkActive="active"
+      aria-current="page"
+      >{{ cardInfo.name }}</a
+    >
     <div class="type">
-      <span>{{ getTranslatedType()  }}</span>
+      <span>{{ getTranslatedType() }}</span>
     </div>
   </header>
 
@@ -14,9 +19,9 @@
     <div class="container__info__artists">
       <h3>Principais Figuras:</h3>
       <ul>
-          @for (philosopher of cardInfo.key_figures ; track philosopher) {
-            <li>{{ philosopher }}</li>
-          }
+        @for (philosopher of cardInfo.key_figures ; track philosopher) {
+        <li>{{ philosopher }}</li>
+        }
       </ul>
     </div>
 

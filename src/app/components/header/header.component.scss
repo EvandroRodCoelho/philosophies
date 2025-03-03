@@ -4,4 +4,10 @@ header {
   align-items: center;
 
    padding: 2.125rem 1.5rem;
+
+   a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 24px;
+   }
 }
