@@ -1,15 +1,20 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { PhilosophyComponent } from './pages/philosophy/philosophy.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    pathMatch: 'full',
+    title: 'Home',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'philosophy/:name',
-    component: PhilosophyComponent,
+    title: 'Philosophy Details',
+    loadComponent: () =>
+      import('./pages/philosophy/philosophy.component').then(
+        (m) => m.PhilosophyComponent
+      ),
   },
   { path: '**', redirectTo: '' },
 ];
