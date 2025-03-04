@@ -21,8 +21,8 @@ type FilterState = {
 })
 export class HomeComponent {
   philosophiesFilter = [...philosophiesData];
-  searchTerm: string = ''; // Adiciona o estado da busca
-
+  searchTerm: string = '';
+  isGridView = false;
   filterActive: FilterState = {
     all: true,
     ethics: false,
@@ -31,7 +31,17 @@ export class HomeComponent {
   };
 
   constructor(private themeService: ThemeService) {}
+    getGridToggleIcon(): string {
+      if (this.isGridView) {
+        return this.isDarkMode() ? 'icon-list-dark.png' : 'icon-list-ligth.png';
+      } else {
+        return this.isDarkMode() ? 'icon-grid-dark.png' : 'icon-grid-ligth.png';
+      }
+    }
 
+  onGridToggle() {
+    this.isGridView = !this.isGridView;
+  }
   toggleFilter(filterKey: keyof FilterState): void {
     this.filterActive = this.resetFilters(filterKey);
     this.applyFilters();
@@ -53,8 +63,6 @@ export class HomeComponent {
     if (activeFilter && activeFilter !== 'all') {
       filteredData = filteredData.filter((item) => item.type === activeFilter);
     }
-
-    // Filtro por nome
     if (this.searchTerm) {
       filteredData = filteredData.filter((item) =>
         item.name.toLowerCase().includes(this.searchTerm)

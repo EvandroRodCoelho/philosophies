@@ -1,8 +1,7 @@
-<button (click)="toggleTheme()">
+<button (click)="toggleTheme()" class="btn-header">
   @if (!isDarkMode()) {
-    <img  src="icon-dark-mode.png" alt="Dark Mode">
+  <img src="icon-dark-mode.png" alt="Dark Mode" />
   } @else {
-    <img src="icon-light-mode.png" alt="icon light mode">
+  <img src="icon-light-mode.png" alt="icon light mode" />
   }
 </button>
-

@@ -83,6 +83,11 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
 
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
   &:hover {
     background-color: var(--button-hover);
   }

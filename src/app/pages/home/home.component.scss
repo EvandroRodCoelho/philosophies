@@ -74,7 +74,15 @@
     }
   }
 
-  &__cards {
+  &__cards__no__grid {
+    width: 100%;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  &__cards__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 24px;

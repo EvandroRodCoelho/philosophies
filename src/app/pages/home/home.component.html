@@ -1,4 +1,12 @@
-<app-header [isHome]="true"></app-header>
+<app-header [isHome]="true">
+  <button (click)="onGridToggle()" class="btn-header">
+    <img
+      [src]="getGridToggleIcon()"
+      [alt]="isGridView ? 'Ícone de lista' : 'Ícone de grade'"
+    />
+  </button>
+</app-header>
+
 <main class="main">
   <section class="main__search">
     <h3>Explore o Mundo da Filosofia</h3>
@@ -7,17 +15,17 @@
     </p>
     <div class="main__search__input">
       @if (!isDarkMode()) {
-      <img
-        src="icon-search.png"
-        alt="Ícone de busca no modo escuro"
-        aria-hidden="true"
-      />
+        <img
+          src="icon-search.png"
+          alt="Ícone de busca no modo escuro"
+          aria-hidden="true"
+        />
       } @else {
-      <img
-        src="icon-search-dark.png"
-        alt="Ícone de busca no modo claro"
-        aria-hidden="true"
-      />
+        <img
+          src="icon-search-dark.png"
+          alt="Ícone de busca no modo claro"
+          aria-hidden="true"
+        />
       }
       <input
         type="text"
@@ -60,9 +68,12 @@
     </button>
   </section>
 
-  <section class="main__cards">
+  <section
+    class="main__cards"
+    [ngClass]="isGridView ? 'main__cards__grid' : 'main__cards__no__grid'"
+  >
     @for (philosopher of philosophiesFilter; track philosopher) {
-    <app-card [cardInfo]="philosopher"></app-card>
+      <app-card [cardInfo]="philosopher"></app-card>
     }
   </section>
 </main>
