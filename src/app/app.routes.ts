@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { philosophyGuard } from './guard/philosophy.guard';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,7 @@ export const routes: Routes = [
   {
     path: 'philosophy/:name',
     title: 'Philosophy Details',
+    canActivate: [philosophyGuard],
     loadComponent: () =>
       import('./pages/philosophy/philosophy.component').then(
         (m) => m.PhilosophyComponent
